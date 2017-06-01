@@ -47,17 +47,11 @@ $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName
 "Logging in to Azure..."
 
 Add-AzureRmAccount `
-
 -ServicePrincipal `
-
 -TenantId $servicePrincipalConnection.TenantId `
-
 -ApplicationId $servicePrincipalConnection.ApplicationId `
-
 -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint
-
 "Setting context to a specific subscription"
-
 Set-AzureRmContext -SubscriptionId $SubId
 
 }
